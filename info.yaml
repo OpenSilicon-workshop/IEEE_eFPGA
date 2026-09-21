@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title: "IEEE Mini eFPGA (4-cell LUT4 fabric)"
-  author: "Hadjer"            
+  author: "Hadjer Bouyahiaoui, Ines Mekkid, Ibrahim Touil"            
   discord: ""
   description: "A minimal embedded FPGA: 4 logic cells, each a LUT4 with a registered output, fully crossbar-connected, configured over a 112-bit serial chain."
   language: "Verilog"

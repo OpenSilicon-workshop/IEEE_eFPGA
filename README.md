@@ -75,25 +75,3 @@ pip install cocotb
 make
 ```
 
-Both tests must pass: `test_configured_logic` and `test_config_readback`.
-
-Then push to GitHub, let the GDS action run, and confirm:
-- the GDS build is green
-- the **precheck** is green
-- the **gl_test** (gate-level) is green
-- the area report shows it fitting 1x2 with margin
-
-Never pay for a tile while any of those are failing.
-
-## If it doesn't fit 1x2
-
-Drop to 3 cells (change `NCELLS`, and trim the `uo_out` mapping), or move up
-to 2x2 tiles. The estimate says 4 cells ≈ 1200 cell-equivalents against a 1x2
-budget of roughly 2000, but estimates are estimates — trust the area report.
-
-## Scaling up later
-
-`NCELLS` is a localparam but the output mapping assumes 4 cells. To go to 8
-cells you also need `SELW = 4` (12 sources), a wider bus, and a new plan for
-outputs since you only have 8 output pins. That's a good second-version
-project — or the point at which FABulous becomes the better tool.
